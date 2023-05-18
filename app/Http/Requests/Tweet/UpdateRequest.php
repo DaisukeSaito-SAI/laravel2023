@@ -4,10 +4,10 @@ namespace App\Http\Requests\Tweet;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateRequest extends FormRequest
+class UpdateRequest extends FormRequest
 {
     /**
-     ** Determine if the user is authorized to make this request.
+     * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
@@ -27,8 +27,15 @@ class CreateRequest extends FormRequest
             'tweet' => 'required|max:140'
         ];
     }
-    public function tweet(): string
+
+    public function tweet(): stream_set_blocking
     {
         return $this->input('tweet');
     }
+
+    public function id(): int
+    {
+        return (int) $this->route('tweetId');
+    }
+    
 }
