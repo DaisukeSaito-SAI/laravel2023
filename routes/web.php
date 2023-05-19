@@ -28,3 +28,4 @@ Route::post('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\Update\IndexC
 Route::post('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\Update\PutController::class)->name('tweet.update.put')->where('tweetId', '[0-9]+');
 
 Route::delete('/tweet/delete/{tweetId}', \App\Htpp\Controllers\Tweet\DeleteController::class)->name('tweet.delete');
+
